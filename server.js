@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 // GET POSTS
-app.use("/", require("./routes/postsRoute")) 
+app.use("/", require("./routes/postsRoute"));
 
 // POST LOGIN
 app.use("/", require("./routes/loginRoute"));
