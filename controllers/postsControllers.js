@@ -1,5 +1,7 @@
 const posts = require("../dataset/dataset.js");
 
+
+
 //Create simple route to get all our posts
 /**
  * @method: GET

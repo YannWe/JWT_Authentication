@@ -1,7 +1,10 @@
 // loading environment variables
 require("dotenv").config();
-// import express
+// import express package
 const express = require("express");
+
+// import the router
+const router = require("./routes/authRouter.js")
 
 // instantiate express application
 const app = express();
@@ -9,14 +12,12 @@ const app = express();
 // use express body parser middleware
 app.use(express.json());
 
-// GET POSTS
-app.use("/", require("./routes/postsRoute"));
+// use the router
 
-// POST LOGIN
-app.use("/", require("./routes/authRouter"));
+app.use("/", router);
 
-// Listen to port number: 3001
-const PORT = process.env.SERVER_PORT || 3001;
+// Listen to port number: 4001
+const PORT = process.env.AUTH_SERVER_PORT || 4001;
 app.listen(PORT, () => {
   console.log(`Application is connected and listening to port ${PORT}`);
 });

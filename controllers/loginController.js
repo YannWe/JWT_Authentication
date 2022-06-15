@@ -1,5 +1,7 @@
 const jwt = require("jsonwebtoken");
 
+const generateToken = require("../middleware/generateToken");
+
 // Create a login route
 /**
  * @method: POST
@@ -15,10 +17,21 @@ const login = (req, res) => {
   const user = {
     name: username,
   };
-  const accessToken = jwt.sign(user, process.env.ACCESS_SECRET);
+  const accessToken = generateToken(user);
   res.json({
     accessToken,
   });
 };
 
-module.exports = login;
+// token Controller
+function tokenController(req, res) {
+  // create a token to access api's you are authorised to.
+  const username = req.user.name;
+  const user = {
+    name: username,
+  };
+  const accessToken = generateToken(user, process.env.ACCESS_SECRET, "30s");
+  res.json({ accessToken });
+}
+
+module.exports = { login, tokenController };

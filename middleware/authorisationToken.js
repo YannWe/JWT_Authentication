@@ -1,3 +1,4 @@
+// import jsonwebtoken for authorisation
 const jwt = require("jsonwebtoken");
 // token verification, and payload serialisation
 function authoriseToken(req, res, next) {
