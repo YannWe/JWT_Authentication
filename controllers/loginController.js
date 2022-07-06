@@ -17,9 +17,11 @@ const login = (req, res) => {
   const user = {
     name: username,
   };
-  const accessToken = generateToken(user);
+  const accessToken = generateToken(user, process.env.ACCESS_SECRET, "30s");
+  const refreshToken = generateToken(user, process.env.REFRESH_SECRET, "3600s")
   res.json({
     accessToken,
+    refreshToken,
   });
 };
 

@@ -1,11 +1,20 @@
 GET http://localhost:3001/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2luYSIsImlhdCI6MTY1NTI4NzExNiwiZXhwIjoxNjU1Mjg3MTQ2fQ.D7VcYo78uPfH2JV0za_CpRSrpFhRu2RRbNT-RfWEj6o
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2luYSIsImlhdCI6MTY1NTMwMTMxMywiZXhwIjoxNjU1MzAxMzQzfQ.fMA_7d8PXvov1HAEnZ23FS2lpfHhe_jYDOKkyIeFy_A
 
 ###
 
-POST http://localhost:3001/login
+POST http://localhost:4001/login
 Content-Type: application/json
 
 {
     "username":"Gina"
+}
+
+### 
+
+POST http://localhost:4001/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiR2luYSIsImlhdCI6MTY1NTMwMTI3NiwiZXhwIjoxNjU1MzA0ODc2fQ.dxzyA07ev-bDcwtdM8a02bqShoBEEJJCASdupt62rSE"
 }
